@@ -126,6 +126,8 @@ joined %>%
   
   7. Now plot a choropleth map of the number of deaths on a county level.
   
+  I am using the same criteria for deaths as described in question 3: I will only be considering DOA codes of 7 and 8, corresponding to either dying on scene or en route to the medical facility, since not all people involved in a fatal accident may die (an accident is still considered fatal if only 1 of 3 people die). codes 0 (not applicable) and 9 (unknown) will not be considered as they are ambiguous as to if the person actually died.
+  
 ```{r}
 county_codes <- readxl::read_excel('./GLC_codes.xlsx', sheet='GeoLocation_UnitedStates') %>% 
   select(`State Name`, `County Code`, `County Name`)

@@ -467,6 +467,7 @@ joined &lt;- left_join(person, acc, by=common)</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>Now plot a choropleth map of the number of deaths on a county level.</li>
 </ol>
+<p>I am using the same criteria for deaths as described in question 3: I will only be considering DOA codes of 7 and 8, corresponding to either dying on scene or en route to the medical facility, since not all people involved in a fatal accident may die (an accident is still considered fatal if only 1 of 3 people die). codes 0 (not applicable) and 9 (unknown) will not be considered as they are ambiguous as to if the person actually died.</p>
 <pre class="r"><code>county_codes &lt;- readxl::read_excel(&#39;./GLC_codes.xlsx&#39;, sheet=&#39;GeoLocation_UnitedStates&#39;) %&gt;% 
   select(`State Name`, `County Code`, `County Name`)
 
